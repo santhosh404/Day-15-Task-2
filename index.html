@@ -10,23 +10,50 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="form-validation.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center mt-5"
+      >
+        <h1 id="title">HTML Forms</h1>
+        <p id="description">This is some description</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-secondary mt-5">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Pincode</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Food</th>
+              <th scope="col">State</th>
+              <th scope="col">Country</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
     <div
-      class="container d-flex flex-column align-items-center justify-content-center"
+      class="container d-flex flex-column align-items-center justify-content-center mb-5"
     >
-      <h1 id="title">HTML Forms</h1>
-      <p id="description">This is some description</p>
-      <form id="form">
+      <form id="form" class="mt-5">
         <div class="card mt-2" style="width: 50rem">
           <div class="card-header fw-bold">Please fill out the form</div>
           <div class="card-body overflow-auto" style="height: 540px">
             <!-- FirstName and LastName -->
-            <div class="d-flex gap-3">
-              <div class="mb-3 w-100">
+            <div class="row">
+              <div class="col-md-6 mb-3">
                 <div class="form-group">
-                  <label for="firstName" class="form-label">First Name</label>
+                  <label for="first-name" class="form-label"
+                    >First Name <span class="text-danger">*</span></label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -34,18 +61,14 @@
                     placeholder="Please enter first name"
                     required
                   />
-                </div>
-
-                <div
-                  id="validationServerFirstNameFeedback"
-                  class="invalid-feedback"
-                >
-                  First Name is required
+                  <div class="invalid-feedback">First Name is required</div>
                 </div>
               </div>
-              <div class="mb-3 w-100">
+              <div class="col-md-6 mb-3">
                 <div class="form-group">
-                  <label for="lastName" class="form-label">Last Name</label>
+                  <label for="last-name" class="form-label"
+                    >Last Name <span class="text-danger">*</span></label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -53,39 +76,27 @@
                     placeholder="Please enter last name"
                     required
                   />
-                </div>
-
-                <div
-                  id="validationServerLastNameFeedback"
-                  class="invalid-feedback"
-                >
-                  Last Name is required
+                  <div class="invalid-feedback">Last Name is required</div>
                 </div>
               </div>
             </div>
 
             <!-- address and pincode -->
-            <div class="d-flex gap-3">
-              <div class="mb-3 w-100">
+            <div class="row">
+              <div class="col-md-6 mb-3">
                 <div class="form-group">
                   <label for="address" class="form-label">Address</label>
                   <textarea
-                    type="text"
                     class="form-control"
                     id="address"
                     placeholder="Please enter address"
+                    rows="1"
                     required
                   ></textarea>
-                </div>
-
-                <div
-                  id="validationServerAddressFeedback"
-                  class="invalid-feedback"
-                >
-                  Address is required
+                  <div class="invalid-feedback">Address is required</div>
                 </div>
               </div>
-              <div class="mb-3 w-100">
+              <div class="col-md-6 mb-3">
                 <div class="form-group">
                   <label for="pincode" class="form-label">Pincode</label>
                   <input
@@ -96,13 +107,7 @@
                     placeholder="Please enter pincode"
                     required
                   />
-                </div>
-
-                <div
-                  id="validationServerPincodeFeedback"
-                  class="invalid-feedback"
-                >
-                  Pincode is required
+                  <div class="invalid-feedback">Pincode is required</div>
                 </div>
               </div>
             </div>
@@ -226,35 +231,29 @@
 
             <!-- State and Country -->
 
-            <div class="d-flex gap-3">
-              <div class="mb-3 w-100">
-                <label for="state" class="form-label">State</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="state"
-                  placeholder="Please enter State"
-                />
-                <div
-                  id="validationServerStateFeedback"
-                  class="invalid-feedback"
-                >
-                  State is required
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="state" class="form-label">State</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="state"
+                    placeholder="Please enter State"
+                  />
+                  <div class="invalid-feedback">State is required</div>
                 </div>
               </div>
-              <div class="mb-3 w-100">
-                <label for="country" class="form-label">Country</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="country"
-                  placeholder="Please enter Country"
-                />
-                <div
-                  id="validationServerCountryFeedback"
-                  class="invalid-feedback"
-                >
-                  Country is required
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="country" class="form-label">Country</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="country"
+                    placeholder="Please enter Country"
+                  />
+                  <div class="invalid-feedback">Country is required</div>
                 </div>
               </div>
             </div>
@@ -278,22 +277,6 @@
           </div>
         </div>
       </form>
-
-      <table class="table table-bordered table-striped mt-5">
-        <thead>
-          <tr>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Pincode</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Food</th>
-            <th scope="col">State</th>
-            <th scope="col">Country</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
     </div>
 
     <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
